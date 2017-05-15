@@ -12,25 +12,26 @@ public class JsonUtil {
     public void parseJson(String JsonData) {
         try {
             JsonReader reader = new JsonReader(new StringReader(JsonData));
-            reader.beginArray();
+//            reader.beginArray();
             while (reader.hasNext())
             {
                 reader.beginObject();
                 while (reader.hasNext())
                 {
                     String data = reader.nextName();
+                    Log.i("Json", "data = "+ data);
                     if (data.equals("name"))
                     {
-                        Log.i("Json", "name = "+ reader.nextString());
+//                        Log.i("Json", "name = "+ reader.nextString());
                     }
                       else  if (data.equals("age"))
                     {
-                        Log.i("Json","age = "+reader.nextInt());
+//                        Log.i("Json","age = "+reader.nextInt());
                     }
                 }
                 reader.endObject();
             }
-            reader.endArray();
+//            reader.endArray();
 
         }
         catch (Exception e)
